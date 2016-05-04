@@ -1,0 +1,11 @@
+{
+  "name": "Deliver Preview",
+  "description": "Easily modify deliver preview cookies",
+  "version": "0.0.0",
+  "manifest_version": 2,
+  "content_scripts": [{
+    "js": [ "contentscript.js" ],
+    "matches": [ "*://*/*" ]
+  }],
+  "web_accessible_resources": [ "script.js" ]
+}

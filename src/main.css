@@ -1,0 +1,49 @@
+@import 'qubit-styles/css/variables/color';
+
+.qb-Preview {
+  position: fixed;
+  bottom: -130px;
+  right: 0;
+  width: 320px;
+  padding: 10px 10px 40px 10px;
+  box-sizing: border-box;
+  background-color: white;
+  border: 2px solid var(--color-oceanGreen);
+  z-index: 999;
+  height: 130px;
+  transition: bottom 0.5s;
+}
+
+.qb-Preview.qb-isOpen {
+  bottom: 0;
+}
+
+.qb-Preview-tab {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+  width: 320px;
+  background-color: var(--color-oceanGreen);
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  z-index: 999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 15px;
+}
+
+.qb-Preview-creatives input {
+  width: 100%;
+}
+
+.qb-Preview-clear {
+  float: right;
+}
+
+.qs-Button {
+  margin-top: 10px;
+}
