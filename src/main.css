@@ -1,4 +1,8 @@
+@import 'qubit-styles/css/components/inputs/button';
+@import 'qubit-styles/css/components/inputs/textInput';
 @import 'qubit-styles/css/variables/color';
+@import 'qubit-styles/css/variables/font';
+@import 'qubit-styles/css/variables/transition';
 
 .qb-Preview {
   position: fixed;
@@ -11,7 +15,8 @@
   border: 2px solid var(--color-oceanGreen);
   z-index: 999;
   height: 130px;
-  transition: bottom 0.5s;
+  transition: bottom var(--transition-medium);
+  font: normal normal var(--font-weight) var(--font-size) var(--font-family);;
 }
 
 .qb-Preview.qb-isOpen {

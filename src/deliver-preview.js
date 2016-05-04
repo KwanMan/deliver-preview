@@ -1,4 +1,3 @@
-require('qubit-styles')
 require('./main.css')
 
 import { pollFor } from './lib/util'
