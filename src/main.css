@@ -6,7 +6,7 @@
 
 .qb-Preview {
   position: fixed;
-  bottom: -130px;
+  bottom: -140px;
   right: 0;
   width: 320px;
   padding: 10px 10px 40px 10px;
@@ -14,7 +14,7 @@
   background-color: white;
   border: 2px solid var(--color-oceanGreen);
   z-index: 999;
-  height: 130px;
+  height: 140px;
   transition: bottom var(--transition-medium);
   font: normal normal var(--font-weight) var(--font-size) var(--font-family);;
 }
@@ -27,6 +27,7 @@
   position: fixed;
   bottom: 0;
   right: 0;
+  box-sizing: border-box;
   height: 40px;
   line-height: 40px;
   width: 320px;
@@ -43,6 +44,7 @@
 
 .qb-Preview-creatives input {
   width: 100%;
+  box-sizing: border-box;
 }
 
 .qb-Preview-clear {
@@ -51,4 +53,5 @@
 
 .qs-Button {
   margin-top: 10px;
+  box-sizing: border-box;
 }
