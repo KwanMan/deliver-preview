@@ -5,7 +5,8 @@
   "manifest_version": 2,
   "content_scripts": [{
     "js": [ "contentscript.js" ],
-    "matches": [ "*://*/*" ]
+    "matches": [ "*://*/*" ],
+    "exclude_matches": [ "*://*.asana.com/*" ]
   }],
   "web_accessible_resources": [ "script.js" ]
 }
