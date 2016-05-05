@@ -1,6 +1,6 @@
 {
   "name": "deliver-preview",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easily modify deliver preview cookies",
   "main": "src/deliver-preview.js",
   "scripts": {
