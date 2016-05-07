@@ -7909,6 +7909,7 @@
 	              var creatives = $creatives.querySelector('input').value.split(',').map(function (i) {
 	                return parseInt(i, 10);
 	              });
+	              (0, _previews.clearPreviews)();
 	              (0, _previews.setPreviews)(creatives);
 	              document.location.reload();
 	            }

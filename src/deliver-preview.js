@@ -24,6 +24,7 @@ import { getPreviews, setPreviews, clearPreviews } from './lib/previews'
     text: 'Set previews',
     action: () => {
       const creatives = $creatives.querySelector('input').value.split(',').map(i => parseInt(i, 10))
+      clearPreviews()
       setPreviews(creatives)
       document.location.reload()
     }
