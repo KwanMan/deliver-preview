@@ -8057,7 +8057,7 @@
 	    opts.domain = window.__qubit.qtracker.options.domain;
 	  }
 	  (0, _cookieman.set)('smartserve_preview', 'true', opts);
-	  (0, _cookieman.set)('etcForceCreative', JSON.stringify(creatives), opts);
+	  (0, _cookieman.set)('etcForceCreative', encodeURIComponent(JSON.stringify(creatives)), opts);
 	}
 
 	function clearPreviews() {
@@ -8075,7 +8075,7 @@
 	  }
 	  var creatives = void 0;
 	  try {
-	    creatives = JSON.parse(cookies[0].value);
+	    creatives = JSON.parse(decodeURIComponent(cookies[0].value));
 	  } catch (e) {
 	    return false;
 	  }

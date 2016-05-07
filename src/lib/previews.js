@@ -8,7 +8,7 @@ export function setPreviews (creatives) {
     opts.domain = window.__qubit.qtracker.options.domain
   }
   set('smartserve_preview', 'true', opts)
-  set('etcForceCreative', JSON.stringify(creatives), opts)
+  set('etcForceCreative', encodeURIComponent(JSON.stringify(creatives)), opts)
 }
 
 export function clearPreviews () {
@@ -26,7 +26,7 @@ export function getPreviews () {
   }
   let creatives
   try {
-    creatives = JSON.parse(cookies[0].value)
+    creatives = JSON.parse(decodeURIComponent(cookies[0].value))
   } catch (e) {
     return false
   }
