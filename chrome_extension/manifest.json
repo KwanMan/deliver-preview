@@ -1,12 +1,17 @@
 {
-  "name": "Deliver Preview",
+  "name": "Sharingan",
   "description": "Easily modify deliver preview cookies",
   "version": "1.0.2",
   "manifest_version": 2,
+  "icons": {
+    "16": "sharingan16.png",
+    "48": "sharingan48.png",
+    "128": "sharingan128.png"
+  },
   "content_scripts": [{
     "js": [ "contentscript.js" ],
     "matches": [ "*://*/*" ],
     "exclude_matches": [ "*://*.asana.com/*" ]
   }],
-  "web_accessible_resources": [ "script.js" ]
+  "web_accessible_resources": [ "sharingan.js" ]
 }

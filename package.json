@@ -1,5 +1,5 @@
 {
-  "name": "deliver-preview",
+  "name": "sharingan",
   "version": "1.0.2",
   "description": "Easily modify deliver preview cookies",
   "main": "src/deliver-preview.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KwanMan/deliver-preview.git"
+    "url": "git+https://github.com/KwanMan/sharingan.git"
   },
   "author": "Tommy Kwan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/KwanMan/deliver-preview/issues"
+    "url": "https://github.com/KwanMan/sharingan/issues"
   },
-  "homepage": "https://github.com/KwanMan/deliver-preview#readme",
+  "homepage": "https://github.com/KwanMan/sharingan#readme",
   "dependencies": {
     "cookieman": "^1.0.6",
     "qubit-styles": "qubitdigital/qubit-styles"

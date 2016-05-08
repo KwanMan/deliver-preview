@@ -1,8 +1,8 @@
 module.exports = {
-  entry: ['babel-polyfill', './src/deliver-preview.js'],
+  entry: ['babel-polyfill', './src/sharingan.js'],
   output: {
     path: __dirname + '/chrome_extension',
-    filename: 'script.js'
+    filename: 'sharingan.js'
   },
   module: {
     loaders: [
