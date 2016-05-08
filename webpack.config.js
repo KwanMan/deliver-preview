@@ -1,8 +1,11 @@
 module.exports = {
-  entry: ['babel-polyfill', './src/sharingan.js'],
+  entry: {
+    sharingan: ['babel-polyfill', './src/sharingan.js'],
+    background: ['babel-polyfill', './src/background.js']
+  },
   output: {
     path: __dirname + '/chrome_extension',
-    filename: 'sharingan.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [
