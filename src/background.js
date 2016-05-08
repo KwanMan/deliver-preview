@@ -1,7 +1,17 @@
+const exclude = [
+  'asana\.com'
+]
+
 updateIcon()
 
-window.chrome.tabs.onUpdated.addListener((id, info) => {
-  if (info.status === 'complete' && isEnabled()) {
+window.chrome.tabs.onUpdated.addListener(async function (id) {
+  const tab = await getTab(id)
+
+  var shouldExclude = exclude.some(e => {
+    const regex = new RegExp(e, 'i')
+    return regex.test(tab.url)
+  })
+  if (!shouldExclude && info.status === 'complete' && isEnabled()) {
     window.chrome.tabs.executeScript(id, {
       file: 'contentscript.js'
     })
@@ -33,4 +43,10 @@ function isEnabled () {
 
 function setEnabled (enabled) {
   window.localStorage.enabled = enabled
+}
+
+function getTab (id) {
+  return new Promise(r => {
+    window.chrome.tabs.get(id, r)
+  })
 }

@@ -7870,15 +7870,47 @@
 
 	'use strict';
 
+	function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { return step("next", value); }, function (err) { return step("throw", err); }); } } return step("next"); }); }; }
+
+	var exclude = ['asana\.com'];
+
 	updateIcon();
 
-	window.chrome.tabs.onUpdated.addListener(function (id, info) {
-	  if (info.status === 'complete' && isEnabled()) {
-	    window.chrome.tabs.executeScript(id, {
-	      file: 'contentscript.js'
-	    });
-	  }
-	});
+	window.chrome.tabs.onUpdated.addListener(function () {
+	  var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(id) {
+	    var tab, shouldExclude;
+	    return regeneratorRuntime.wrap(function _callee$(_context) {
+	      while (1) {
+	        switch (_context.prev = _context.next) {
+	          case 0:
+	            _context.next = 2;
+	            return getTab(id);
+
+	          case 2:
+	            tab = _context.sent;
+	            shouldExclude = exclude.some(function (e) {
+	              var regex = new RegExp(e, 'i');
+	              return regex.test(tab.url);
+	            });
+
+	            if (!shouldExclude && info.status === 'complete' && isEnabled()) {
+	              window.chrome.tabs.executeScript(id, {
+	                file: 'contentscript.js'
+	              });
+	            }
+
+	          case 5:
+	          case 'end':
+	            return _context.stop();
+	        }
+	      }
+	    }, _callee, this);
+	  }));
+
+	  return function (_x) {
+	    return ref.apply(this, arguments);
+	  };
+	}());
 
 	window.chrome.browserAction.onClicked.addListener(function (tab) {
 	  setEnabled(!isEnabled());
@@ -7905,6 +7937,12 @@
 
 	function setEnabled(enabled) {
 	  window.localStorage.enabled = enabled;
+	}
+
+	function getTab(id) {
+	  return new Promise(function (r) {
+	    window.chrome.tabs.get(id, r);
+	  });
 	}
 
 /***/ }
