@@ -8,9 +8,14 @@
     "48": "sharingan48.png",
     "128": "sharingan128.png"
   },
-  "web_accessible_resources": [ "contentscript.js", "sharingan.js" ],
+  "web_accessible_resources": [
+    "contentscript.js",
+    "sharingan.js"
+  ],
   "background": {
-    "scripts": [ "background.js" ]
+    "scripts": [
+      "background.js"
+    ]
   },
   "browser_action": {
     "default_icon": "sharingan128.png",
