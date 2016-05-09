@@ -4,14 +4,14 @@ const exclude = [
 
 updateIcon()
 
-window.chrome.tabs.onUpdated.addListener(async function (id) {
+window.chrome.tabs.onUpdated.addListener(async function (id, { status }) {
   const tab = await getTab(id)
 
   var shouldExclude = exclude.some(e => {
     const regex = new RegExp(e, 'i')
     return regex.test(tab.url)
   })
-  if (!shouldExclude && info.status === 'complete' && isEnabled()) {
+  if (!shouldExclude && status === 'complete' && isEnabled()) {
     window.chrome.tabs.executeScript(id, {
       file: 'contentscript.js'
     })

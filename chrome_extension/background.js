@@ -7877,7 +7877,8 @@
 	updateIcon();
 
 	window.chrome.tabs.onUpdated.addListener(function () {
-	  var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(id) {
+	  var ref = _asyncToGenerator(regeneratorRuntime.mark(function _callee(id, _ref) {
+	    var status = _ref.status;
 	    var tab, shouldExclude;
 	    return regeneratorRuntime.wrap(function _callee$(_context) {
 	      while (1) {
@@ -7893,7 +7894,7 @@
 	              return regex.test(tab.url);
 	            });
 
-	            if (!shouldExclude && info.status === 'complete' && isEnabled()) {
+	            if (!shouldExclude && status === 'complete' && isEnabled()) {
 	              window.chrome.tabs.executeScript(id, {
 	                file: 'contentscript.js'
 	              });
@@ -7907,7 +7908,7 @@
 	    }, _callee, this);
 	  }));
 
-	  return function (_x) {
+	  return function (_x, _x2) {
 	    return ref.apply(this, arguments);
 	  };
 	}());
