@@ -5,6 +5,8 @@ import { buildBox, buildTextInput, buildButton } from './lib/build'
 import { getPreviews, setPreviews, clearPreviews } from './lib/previews'
 
 ;(async function () {
+  await pollFor(() => window.__qubit.smartserve)
+
   // Check for preview
   const creatives = getPreviews() || []
   await pollFor(() => document.body)

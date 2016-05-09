@@ -7887,14 +7887,21 @@
 	    while (1) {
 	      switch (_context.prev = _context.next) {
 	        case 0:
+	          _context.next = 2;
+	          return (0, _util.pollFor)(function () {
+	            return window.__qubit.smartserve;
+	          });
+
+	        case 2:
+
 	          // Check for preview
 	          creatives = (0, _previews.getPreviews)() || [];
-	          _context.next = 3;
+	          _context.next = 5;
 	          return (0, _util.pollFor)(function () {
 	            return document.body;
 	          });
 
-	        case 3:
+	        case 5:
 	          $container = (0, _build.buildBox)({
 	            tabText: creatives.length ? 'Creatives: ' + creatives.join(', ') : 'No preview cookie'
 	          });
@@ -7931,7 +7938,7 @@
 
 	          document.body.appendChild($container);
 
-	        case 11:
+	        case 13:
 	        case 'end':
 	          return _context.stop();
 	      }
