@@ -1,7 +1,7 @@
 BIN = ./node_modules/.bin
 SCRIPTS = ./build
 
-.PHONY: build release-patch release-minor release-major release-dry-run
+.PHONY: build release-patch release-minor release-major
 
 build:
 	$(BIN)/webpack --progress --colors
