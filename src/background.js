@@ -1,5 +1,6 @@
 const exclude = [
-  'asana\.com'
+  'asana\.com',
+  'slack\.com'
 ]
 
 updateIcon()
